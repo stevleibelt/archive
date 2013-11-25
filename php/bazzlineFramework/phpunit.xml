@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="tests/bootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="false"
+    convertNoticesToExceptions="false"
+    convertWarningsToExceptions="false"
+    stopOnFailure="true">
+    <testsuites>
+        <testsuite name="Utility Test Suite">
+            <directory>tests/Net/Bazzline/Framework/Utility/</directory>
+        </testsuite>
+        <testsuite name="Template Test Suite">
+            <directory>tests/Net/Bazzline/Framework/Template/</directory>
+        </testsuite>
+        <testsuite name="Storage Test Suite">
+            <directory>tests/Net/Bazzline/Framework/Storage/</directory>
+        </testsuite>
+        <testsuite name="Session Test Suite">
+            <directory>tests/Net/Bazzline/Framework/Session/</directory>
+        </testsuite>
+        <testsuite name="Model Test Suite">
+            <directory>tests/Net/Bazzline/Framework/Model/</directory>
+        </testsuite>
+        <testsuite name="Logger Test Suite">
+            <directory>tests/Net/Bazzline/Framework/Logger/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
