@@ -8,3 +8,5 @@ Sections
 
 * [php](https://github.com/stevleibelt/archive/tree/master/php)
     * [wdCalendar](https://github.com/stevleibelt/archive/tree/master/php/wdCalendar)
+    * [dataMapper](https://github.com/stevleibelt/archive/tree/master/php/dataMapper)
+    * [managedCron](https://github.com/stevleibelt/archive/tree/master/php/managedCron)
