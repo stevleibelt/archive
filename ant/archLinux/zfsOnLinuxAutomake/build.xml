@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!-- http://wiki.apache.org/ant/AntUsageGuides -->
+<project name="ant zfsonlinux arch automake" default="make" basedir=".">
+    <!-- import config file -->
+    <property file="ant.properties" />
+
+    <!-- public targets -->
+    <target name="self-update" description="updates source of buildtool">
+        <ant antfile="${directory.command}/self.xml" target="update" />
+    </target>
+
+    <target name="clean" description="remove existing sources">
+        <ant antfile="${directory.command}/clean.xml" target="clean" />
+    </target>
+
+    <target name="init" depends="clean" description="create directories and download source">
+        <ant antfile="${directory.command}/init.xml" target="init" />
+    </target>
+
+    <target name="make" depends="init" description="uninstall, build and install sources">
+        <antcall target="export" />
+        <ant antfile="${directory.command}/make.xml" target="make" />
+        <antcall target="import" />
+    </target>
+
+    <target name="import" description="imports available zpools">
+        <ant antfile="${directory.command}/zpool.xml" target="import" />
+    </target>
+
+    <target name="export" description="exports available zpools">
+        <ant antfile="${directory.command}/zpool.xml" target="export" />
+    </target>
+
+    <target name="system-full-upgrade" description="uninstalls the zfs components, updates the system, rebuilds and installs the zfs components and cleans itself up">
+        <antcall target="clean" />
+        <antcall target="self-update" />
+        <antcall target="uninstall" />
+        <exec executable="sudo">
+            <arg value="pacman" />
+            <arg value="-Syu" />
+            <arg value="--noconfirm" />
+        </exec>
+        <antcall target="make" />
+        <antcall target="clean" />
+    </target>
+
+    <target name="uninstall" description="uninstalls installed sources">
+        <ant antfile="${directory.command}/make.xml" target="uninstall" />
+    </target>
+
+    <target name="manual" description="shows the manual" >
+        <echo>
+NAME
+        ant - automake for zfsonlinx files of aur.archlinux.org
+SYNOPSIS
+        ant [clean make self-update uninstall init manual system-full-upgrade]
+DESCRIPTION
+        Uninstalls current installed packages, download, build and install newest available packages.
+
+        Following options are available.
+
+        clean
+            Removes existing sources and directories.
+
+        init
+            Executes clean.
+            Creates directories and download sources.
+
+        make
+            Executes init and uninstall
+            Make packes from available sources and installs the packages.
+
+        uninstall
+            Uninstalls installed packages.
+
+        manual
+            Prints out this manual.
+
+        self-update
+            Updates ant code.
+
+        system-full-upgrade
+            Runs all ant targets and also pacman -Syu to do all within one call.
+AUTHOR  
+        Written by Stev Leibelt
+
+REPORTING BUGS
+        artodeto@arcor.de
+
+SEE ALSO
+        artodeto.bazzline.net
+        </echo>
+    </target>
+</project>

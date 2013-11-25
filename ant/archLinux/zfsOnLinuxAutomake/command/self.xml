@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="ant zfsonlinux arch automake - self" default="update" basedir=".">
+    <target name="update" description="updates itself">
+        <exec executable="git">
+            <arg value="pull" />
+        </exec>
+    </target>
+</project>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<project name="ant zfsonlinux arch automake - make" default="make" basedir=".">
+    <!-- public targets -->
+    <target name="make" description="uninstall, build and install sources">
+        <antcall target="uninstall" />
+
+        <antcall target="-build">
+            <param name="basedir" value="${directory.spl-utils}/spl-utils" />
+        </antcall>
+        <antcall target="-install">
+            <param name="basedir" value="${directory.spl-utils}/spl-utils" />
+        </antcall>
+
+        <antcall target="-build">
+            <param name="basedir" value="${directory.spl}/spl" />
+        </antcall>
+        <antcall target="-install">
+            <param name="basedir" value="${directory.spl}/spl" />
+        </antcall>
+
+        <antcall target="-build">
+            <param name="basedir" value="${directory.zfs-utils}/zfs-utils" />
+        </antcall>
+        <antcall target="-install">
+            <param name="basedir" value="${directory.zfs-utils}/zfs-utils" />
+        </antcall>
+
+        <antcall target="-build">
+            <param name="basedir" value="${directory.zfs}/zfs" />
+        </antcall>
+        <antcall target="-install">
+            <param name="basedir" value="${directory.zfs}/zfs" />
+        </antcall>
+    </target>
+
+    <!-- private targets -->
+    <!-- installs the given file -->
+    <target name="-install">
+        <fileset dir="${basedir}" id="file.found">
+            <filename name="**/*.pkg.tar.xz"/>
+        </fileset>
+        <property name="file.install" refid="file.found" />
+        <antcall target="-packmanInstall">
+            <param name="package.name" value="${file.install}" />
+        </antcall>
+    </target>
+
+    <!-- uninstalls packages -->
+    <target name="uninstall">
+        <antcall target="-packmanUninstall">
+            <param name="package.name" value="zfs" />
+        </antcall>
+        <antcall target="-packmanUninstall">
+            <param name="package.name" value="zfs-utils" />
+        </antcall>
+        <antcall target="-packmanUninstall">
+            <param name="package.name" value="spl" />
+        </antcall>
+        <antcall target="-packmanUninstall">
+            <param name="package.name" value="spl-utils" />
+        </antcall>
+    </target>
+
+    <!-- make -->
+    <target name="-build">
+        <exec executable="makepkg">
+        </exec>
+    </target>
+
+    <!-- pacman -->
+    <target name="-packmanInstall">
+        <exec executable="sudo">
+            <arg value="pacman" />
+            <arg value="-U" />
+            <arg value="--noconfirm" />
+            <arg value="${file.install}" />
+        </exec>
+    </target>
+    <target name="-packmanUninstall">
+        <exec executable="sudo">
+            <arg value="pacman" />
+            <arg value="-R" />
+            <arg value="--noconfirm" />
+            <arg value="${package.name}" />
+        </exec>
+    </target>
+</project>

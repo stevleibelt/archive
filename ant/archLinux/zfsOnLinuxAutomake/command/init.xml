@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project name="ant zfsonlinux arch automake - init" default="init" basedir=".">
+    <!-- public targets -->
+    <target name="init" description="create directories and download source">
+        <!-- create directories -->
+        <mkdir dir="${directory.spl-utils}" />
+        <mkdir dir="${directory.spl}" />
+        <mkdir dir="${directory.zfs-utils}" />
+        <mkdir dir="${directory.zfs}" />
+
+        <!-- download source -->
+        <get src="${download.spl-utils}" dest="${directory.spl-utils}" />
+        <get src="${download.spl}" dest="${directory.spl}" />
+        <get src="${download.zfs-utils}" dest="${directory.zfs-utils}" />
+        <get src="${download.zfs}" dest="${directory.zfs}" />
+
+        <!-- untar source -->
+        <antcall target="-gunzip_and_untar" >
+            <param name="directory" value="${directory.spl-utils}" />
+            <param name="source.tar" value="spl-utils.tar" />
+        </antcall>
+
+        <antcall target="-gunzip_and_untar" >
+            <param name="directory" value="${directory.spl}" />
+            <param name="source.tar" value="spl.tar" />
+        </antcall>
+
+        <antcall target="-gunzip_and_untar" >
+            <param name="directory" value="${directory.zfs-utils}" />
+            <param name="source.tar" value="zfs-utils.tar" />
+        </antcall>
+
+        <antcall target="-gunzip_and_untar" >
+            <param name="directory" value="${directory.zfs}" />
+            <param name="source.tar" value="zfs.tar" />
+        </antcall>
+    </target>
+
+    <!-- private targets -->
+    <!-- unpack -->
+    <target name="-gunzip_and_untar">
+        <gunzip src="${directory}/${source.tar}.gz" />
+        <untar src="${directory}/${source.tar}" dest="${directory}" />
+        <delete file="${directory}/${source.tar}" />
+    </target>
+</project>

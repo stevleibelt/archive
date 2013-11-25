@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="ant zfsonlinux arch automake - clean" default="clean" basedir=".">
+    <target name="clean" description="remove existing sources">
+        <delete dir="${directory.spl-utils}" failonerror="false" />
+        <delete dir="${directory.spl}" failonerror="false" />
+        <delete dir="${directory.zfs-utils}" failonerror="false" />
+        <delete dir="${directory.zfs}" failonerror="false" />
+    </target>
+</project>

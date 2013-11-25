@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<project name="ant zfsonlinux arch automake - zpool" default="export" basedir=".">
+    <!-- public targets -->
+    <target name="import" description="imports all avaiable zpools">
+         <exec executable="sudo">
+            <arg value="zpool" />
+            <arg value="import" />
+        </exec>
+    </target>
+    <target name="export" description="exports all avaiable zpools">
+         <exec executable="sudo">
+            <arg value="zpool" />
+            <arg value="export" />
+        </exec>
+    </target>
+</project>
