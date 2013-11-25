@@ -1,0 +1,19 @@
+{
+    "name": "net_bazzline/calendar",
+    "type": "calendar",
+    "description": "Calendar",
+    "keywords": ["php", "calendar", "bazzline"],
+    "homepage": "https://github.com/stevleibelt/php_wdCalendar",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "stev leibelt",
+            "email": "artodeto@arcor.de",
+            "homepage": "http://artodeto.bazzline.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "net_bazzline/framework": "dev-master"
+    }
+}

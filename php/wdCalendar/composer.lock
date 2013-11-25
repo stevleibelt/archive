@@ -1,0 +1,63 @@
+{
+    "hash": "d89cc655fd5e2b2cc8c8558046791b65",
+    "packages": [
+        {
+            "name": "net_bazzline/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stevleibelt/php_net_bazzline_framework.git",
+                "reference": "0f69a4b54ad537d087c292992b5d524edda63af2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stevleibelt/php_net_bazzline_framework/zipball/0f69a4b54ad537d087c292992b5d524edda63af2",
+                "reference": "0f69a4b54ad537d087c292992b5d524edda63af2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "framework",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "stev leibelt",
+                    "email": "artodeto@arcor.de"
+                }
+            ],
+            "description": "Lean framework for PHP 5.3",
+            "homepage": "https://github.com/stevleibelt/php_net_bazzline_framework",
+            "keywords": [
+                "bazzline",
+                "framework",
+                "php"
+            ],
+            "time": "2013-03-16 17:58:41"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "net_bazzline/framework": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
