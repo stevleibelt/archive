@@ -1,0 +1,7 @@
+.idea
+cache/
+composer.lock
+configuration/propel/runtime-conf.xml
+configuration/propel/net-bazzline-<project>-conf.php
+phpunit.xml
+vendor/
