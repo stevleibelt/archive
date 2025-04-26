@@ -7,6 +7,9 @@ The archive, better know as "the graveyard of old repositories".
 ### 2025
 
 * [identification_server](https://github.com/stevleibelt/archive/tree/master/2025/identification_server)
+* [media_library/client_cli_linux](https://github.com/stevleibelt/archive/tree/master/2025/media_library/client_cli_linux)
+* [media_library/client_webpage](https://github.com/stevleibelt/archive/tree/master/2025/media_library/client_webpage)
+* [media_library/server_api](https://github.com/stevleibelt/archive/tree/master/2025/media_library/server_api)
 * [skeletons](https://github.com/stevleibelt/archive/tree/master/2025/skeletons)
 
 ### 2020

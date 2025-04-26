@@ -1,0 +1,26 @@
+{
+    "name": "MediaLibrary/server_api",
+    "type": "project",
+    "description": "media library server api for audio, book, game, image, video and many more",
+    "keywords": ["php", "web", "media library", "api", "rest", "audio", "book", "game", "image", "video"],
+    "homepage": "https://github.com/MediaLibrary/server_api",
+    "license": "LGPLv3",
+    "authors": [
+	    {
+            "name": "Stev Leibelt",
+            "email": "artodeto@arcor.de",
+            "homepage": "http://artodeto.bazzline.net",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "propel/propel1": "1.7.1",
+        "zfcampus/zf-rest": "1.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "mikey179/vfsStream": "dev-master",
+        "mockery/mockery": "dev-master"
+    }
+}
