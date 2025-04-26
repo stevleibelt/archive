@@ -12,6 +12,7 @@ The archive, better know as "the graveyard of old repositories".
 * [media_library/server_api](https://github.com/stevleibelt/archive/tree/master/2025/media_library/server_api)
 * [php_component_psr_and_log4php_adapter](https://github.com/stevleibelt/archive/tree/master/2025/php_component_psr_and_log4php_adapter)
 * [skeletons](https://github.com/stevleibelt/archive/tree/master/2025/skeletons)
+* [unix_phpstorm_manual_install](https://github.com/stevleibelt/archive/tree/master/2025/unix_phpstorm_manual_install)
 
 ### 2020
 
