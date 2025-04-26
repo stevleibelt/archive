@@ -1,0 +1,7 @@
+.idea
+configuration/propel/runtime-conf.xml
+configuration/propel/*-conf.php
+data/dynamic/*
+composer.lock
+phpunit.xml
+vendor/

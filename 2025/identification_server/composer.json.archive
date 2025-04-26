@@ -1,0 +1,36 @@
+{
+    "name": "net_bazzline/idenfitfication_server",
+    "type": "application",
+    "description": "php rest identification server",
+    "keywords": ["php", "net_bazzline", "rest", "server", "identification"],
+    "homepage": "https://github.com/stevleibelt/php_rest_identification_server",
+    "license": "LGPLv3",
+    "authors": [
+	    {
+            "name": "Stev Leibelt",
+            "email": "artodeto@bazzline.net",
+            "homepage": "http://artodeto.bazzline.net",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "propel/propel1": "1.7.1",
+        "luracast/restler": "3.0.0"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "dev-release-2.0.2",
+        "phpunit/phpunit": "3.7.*",
+        "mikey179/vfsStream": "dev-master",
+        "mockery/mockery": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Controller": "application/",
+            "Database": "application/",
+            "Model": "application/",
+            "Service": "application/"
+        }
+    }
+}
