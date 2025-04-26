@@ -1,0 +1,36 @@
+{
+    "name": "net_bazzline/component_psr_and_log4php_adapter",
+    "type": "library",
+    "description": "php component psr logger log4php bridge Log4Php Logger Interface",
+    "keywords": ["php", "net_bazzline", "adapter", "component", "logger", "psr-3", "log4php", "log", "logging", "Log4Php Logger Interface"],
+    "homepage": "https://github.com/stevleibelt/php_component_psr_and_log4php_adapter",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+	    {
+            "name": "Stev Leibelt",
+            "email": "artodeto@arcor.de",
+            "homepage": "http://artodeto.bazzline.net",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "apache/log4php": "~2.3.0",
+        "php": ">=5.3.3",
+        "psr/log": "~1.0.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.8",
+        "phpunit/phpunit": ">=4.8.35, <6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Net\\Bazzline\\Component\\PsrAndLog4PhpAdapter\\": "source/"
+        }
+    },
+    "autoload-dev": {
+      "psr-4": {
+            "Test\\Net\\Bazzline\\Component\\PsrAndLog4PhpAdapter\\": "test/"
+        }
+    }
+}
